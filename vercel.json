@@ -1,13 +1,23 @@
+
 {
-    "builds": [{
-        "src": "index.py",
-        "use": "@ardnt/vercel-python-wsgi",
-        "config": { "maxLambdaSize": "15mb" }
-    }],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "index.py"
-        }
-    ]
+  "builds": [
+    {
+      "src": "pip install --no-cache-dir -r requirements.txt",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "."
+      }
+    },
+    {
+      "src": "index.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "(.*)",
+      "destination": "index.py"
+    }
+  ],
+  "trailingSlash": true
 }
