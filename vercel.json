@@ -1,0 +1,11 @@
+{
+    "functions": {
+      "api/php.php": {}
+    },
+    "routes": [
+      {
+        "src": "/",
+        "dest": "bing.py"
+      }
+    ]
+  }
