@@ -2,9 +2,8 @@ from flask import Flask, redirect
 import requests
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/bing')
 def index():
-   # return 'Hello World'
    # https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN
    url = 'https://bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN'
    data = requests.get(url).json()
