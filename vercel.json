@@ -1,7 +1,4 @@
 {
-    "functions": {
-      "api/php.php": {}
-    },
     "routes": [
       {
         "src": "/",
