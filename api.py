@@ -14,7 +14,8 @@ def bing(idx):
     returl = 'https://cn.bing.com' + imgurl
     print('imgurl:', returl)
     return returl
-def info(idx):
+
+def info():
     cn_url = 'https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN'
     en_url = 'https://bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN'
     # print('url:', url)
