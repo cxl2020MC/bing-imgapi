@@ -1,22 +1,19 @@
 from flask import Flask, redirect, request
-import requests
+import api
+# import requests
 app = Flask(__name__)
 
-@app.route('/bing/')
-def bing():
-   # https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN
-   idx = request.args.get('idx')
-   if idx != None:
-      url = 'https://bing.com/HPImageArchive.aspx?format=js&idx=' + idx + '&n=1&mkt=zh-CN'
+
+@app.route('/')
+def index():
+   类型 = request.args.get('api')
+   if 类型 == 'bing':
+      idx = request.args.get('idx')
+      returl = api.bing(idx)
+      return redirect(returl)
    else:
-      url = 'https://bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN'
-   print('url:', url)
-   data = requests.get(url).json()
-   print(data)
-   imgurl = data["images"][0]["url"]
-   returl = 'https://cn.bing.com' + imgurl
-   print('imgurl:', returl)
-   return redirect(returl)
+      return redirect('https://www.cxl2020mc.top')
+
 
 if __name__ == '__main__':
-   app.run()
+    app.run()
