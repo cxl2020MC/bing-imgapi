@@ -11,6 +11,8 @@ def index():
       idx = request.args.get('idx')
       returl = api.bing(idx)
       return redirect(returl)
+   elif 类型 == 'info':
+      return api.info()
    else:
       return redirect('https://www.cxl2020mc.top')
 
