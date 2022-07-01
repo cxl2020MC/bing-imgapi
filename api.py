@@ -3,10 +3,11 @@ import requests, time
 
 def bing(idx):
     # https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN
+    idxurl = 'https://cn.bing.com'
     if idx != None:
-        url = 'https://bing.com/HPImageArchive.aspx?format=js&idx=' + idx + '&n=1&mkt=zh-CN'
+        url = idxurl + '/HPImageArchive.aspx?format=js&idx=' + idx + '&n=1&mkt=zh-CN'
     else:
-        url = 'https://bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN'
+        url = idxurl + '/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN'
     print('url:', url)
     data = requests.get(url).json()
     print(data)
