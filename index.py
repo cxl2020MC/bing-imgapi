@@ -9,7 +9,8 @@ def index():
    类型 = request.args.get('api')
    if 类型 == 'bing':
       idx = request.args.get('idx')
-      returl = api.bing(idx)
+      uhd = request.args.get('uhd')
+      returl = api.bing(idx, uhd)
       return redirect(returl)
    elif 类型 == 'info':
       return api.info()

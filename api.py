@@ -1,7 +1,7 @@
 import requests, time
 
 
-def bing(idx):
+def bing(idx, UHD):
     # https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN
     idxurl = 'https://cn.bing.com'
     if idx != None:
@@ -12,6 +12,8 @@ def bing(idx):
     data = requests.get(url).json()
     print(data)
     imgurl = data["images"][0]["url"]
+    if UHD != None:
+        imgurl = imgurl.replace('_1920x1080', '_UHD')
     returl = 'https://cn.bing.com' + imgurl
     print('imgurl:', returl)
     return returl
