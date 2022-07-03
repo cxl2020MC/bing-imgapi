@@ -26,7 +26,7 @@ def info():
     data = requests.get(cn_url).json()
     结束时间 = time.time()
     print(data)
-    中国节点用时 = 结束时间 - 结束时间
+    中国节点用时 = 结束时间 - 开始时间
     开始时间 = time.time()
     data = requests.get(en_url).json()
     结束时间 = time.time()
