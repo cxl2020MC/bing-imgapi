@@ -15,7 +15,7 @@ def index():
    elif 类型 == 'info':
       return api.info()
    else:
-      return redirect('https://www.cxl2020mc.top')
+      return redirect('https://api.cxl2020mc.top?api=bing')
 
 
 if __name__ == '__main__':
