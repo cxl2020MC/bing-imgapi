@@ -18,7 +18,7 @@ def index():
    else:
       return redirect('https://api.cxl2020mc.top?api=bing')
    
-@app.route('/ip')
+@app.route('/ip/')
 def get_ip():
    ip = request.remote_addr
    data = requests.get("https://api.live.bilibili.com/client/v1/Ip/getInfoNew?ip=" + ip).json()
