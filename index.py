@@ -1,4 +1,5 @@
-from flask import Flask, redirect, request
+from flask import Flask, redirect, request, jsonify
+import requests
 import api
 # import requests
 app = Flask(__name__)
@@ -16,7 +17,12 @@ def index():
       return api.info()
    else:
       return redirect('https://api.cxl2020mc.top?api=bing')
-
+   
+@app.route('/ip')
+def get_ip():
+   ip = request.remote_addr
+   data = requests.get("https://api.live.bilibili.com/client/v1/Ip/getInfoNew?ip=" + ip).json()
+   return jsonify(data)
 
 if __name__ == '__main__':
     app.run()
