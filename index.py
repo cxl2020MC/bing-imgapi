@@ -1,9 +1,11 @@
 from flask import Flask, redirect, request, jsonify
+from flask_cors import CORS
 import requests
 import api
 # import requests
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False
+cors = CORS(app)
 
 @app.route('/')
 def index():
