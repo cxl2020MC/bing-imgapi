@@ -11,7 +11,7 @@ async def bing(idx, UHD):
     # print('url:', url)
     async with aiohttp.ClientSession() as session:
         async with session.get(api_url, params=parms) as response:
-            data = response.json()
+            data = await response.json()
             print(data)
             imgurl = data["images"][0]["url"]
             if UHD:
