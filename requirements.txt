@@ -1,3 +1,3 @@
 fastapi[all]
 aiohttp
-response
+requests
