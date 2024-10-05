@@ -1,23 +1,14 @@
-
 {
-  "builds": [
-    {
-      "src": "pip install --no-cache-dir -r requirements.txt",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "."
-      }
-    },
-    {
-      "src": "app.py",
-      "use": "@vercel/python"
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "(.*)",
-      "destination": "app.py"
-    }
-  ],
-  "trailingSlash": true
+    "builds":[
+        {
+            "src": "app.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "rewrites": [
+        {
+            "source": "(.*)",
+            "destination": "app.py"
+        }
+    ]
 }
