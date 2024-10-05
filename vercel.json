@@ -9,14 +9,14 @@
       }
     },
     {
-      "src": "index.py",
+      "src": "app.py",
       "use": "@vercel/python"
     }
   ],
   "rewrites": [
     {
       "source": "(.*)",
-      "destination": "index.py"
+      "destination": "app.py"
     }
   ],
   "trailingSlash": true
